@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Shopping List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/w3.css">
+  <script type="text/ecmascript" src="scripts/angular-1.7.5/angular.js"></script>
+</head>
+<body ng-app="Mod2App" ng-strict-di class="w3-rest">
+  <div class="w3-container w3-third w3-display-middle">
+    <div class="w3-container w3-indigo">
+      <h1>Shopping List</h1>
+    </div>
+    <div ng-controller="ToBuyController as toBuy" class="w3-card-2">
+      <div class="w3-container w3-light-blue">
+        <h3>To Buy</h3>
+      </div>
+      <ul class="w3-ul">
+        <li ng-if="toBuy.items.length === 0">
+          <span class="w3-large w3-text-green">Everything is bought!</span>
+        </li>
+        <li ng-repeat="item in toBuy.items" class="w3-display-container w3-padding-16 w3-hover-pale-red">
+          <span class="w3-large">Buy {{item.quantity}} {{item.unit}}(s) of {{item.name}}</span>
+          <span ng-click="toBuy.bought(item);" class="w3-large w3-button w3-white w3-hover-red w3-display-right w3-margin-right">Bought</span>
+        </li>
+      </ul>
+    </div>
+    <div ng-controller="AlreadyBoughtController as alreadyBought" class="w3-card-2">
+      <div class="w3-container w3-light-blue">
+        <h3>Already Bought</h3>
+      </div>
+      <ul class="w3-ul">
+        <li ng-if="alreadyBought.items.length === 0">
+          <span class="w3-large w3-text-red">Nothing bought yet</span>
+        </li>
+        <li ng-repeat="item in alreadyBought.items" class="w3-light-grey w3-display-container w3-padding-16">
+          <span class="w3-large">Bought {{item.quantity}} {{item.unit}}(s) of {{item.name}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script type="text/ecmascript" src="scripts/app.js"></script>
+</body>
+</html>
