@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Menu Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/w3.css">
+  <script type="text/ecmascript" src="scripts/angular-1.7.5/angular.min.js"></script>
+</head>
+<body ng-app="NarrowItDownApp" ng-strict-di class="w3-rest">
+  <div  ng-controller="NarrowItDownController as ctrl" class="w3-container w3-half w3-display-topmiddle w3-card">
+    <div class="w3-container w3-indigo">
+      <h1>Menu Search</h1>
+    </div>
+    <form class="w3-container">
+      <p>
+        <label class="w3-text-grey">Search</label>
+        <input class="w3-input w3-border" type="text" ng-model="ctrl.searchItem">
+      </p>
+      <p>
+        <button class="w3-btn w3-padding w3-indigo" ng-click="ctrl.search();" class="w3-right">Narrow It Down For Me!</button>
+      </p>
+    </form>
+    <div ng-if="ctrl.isNothingFound" class="w3-container w3-large w3-text-red">Nothing found</div>
+    <found-items ng-if="!ctrl.isNothingFound" items="ctrl.found" on-remove="ctrl.removeFoundItem(index);"></found-items>
+  </div>
+  <script type="text/ecmascript" src="scripts/app.js"></script>
+</body>
+</html>

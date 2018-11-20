@@ -1,0 +1,14 @@
+<ul class="w3-ul">
+  <li ng-repeat="item in items" class="w3-row w3-padding-16 w3-hover-light-grey">
+    <div class="w3-threequarter">
+      <div class="w3-row">
+        <span class="w3-col w3-xlarge" style="width: 15%">{{item.short_name}}</span>
+        <span class="w3-rest w3-large">{{item.name}}</span>
+      </div>
+      <span class="w3-margin-right">{{item.description}}</span>
+    </div>
+    <div class="w3-quarter">
+      <span ng-click="remove({index: $index});" class="w3-margin w3-large w3-btn w3-white w3-hover-red">Don't want this one!</span>
+    </div>
+  </li>
+</ul>
