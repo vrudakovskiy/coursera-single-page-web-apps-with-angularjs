@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Restaurant Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/w3.css">
+  <script type="text/ecmascript" src="lib/angular-1.7.5/angular.js"></script>
+  <script type="text/ecmascript" src="lib/angular-ui-router.1.0.20/angular-ui-router.js"></script>
+
+</head>
+<body ng-app="MenuApp" ng-strict-di class="w3-rest">
+  <ui-view></ui-view>
+  <script type="text/ecmascript" src="src/menuapp/menuapp.module.js"></script>
+  <script type="text/ecmascript" src="src/menuapp/nav-bar.component.js"></script>
+  <script type="text/ecmascript" src="src/menuapp/categories.component.js"></script>
+  <script type="text/ecmascript" src="src/menuapp/items.component.js"></script>
+  <script type="text/ecmascript" src="src/menuapp/categories-view.controller.js"></script>
+  <script type="text/ecmascript" src="src/menuapp/items-view.controller.js"></script>
+  <script type="text/ecmascript" src="src/menuapp/menuapp.routes.js"></script>
+
+  <script type="text/ecmascript" src="src/data/data.module.js"></script>
+  <script type="text/ecmascript" src="src/data/menudata.service.js"></script>
+</body>
+</html>
