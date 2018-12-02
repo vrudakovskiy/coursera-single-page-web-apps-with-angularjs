@@ -1,3 +1,8 @@
 <ul class="w3-ul">
-  <li ng-repeat="item in $ctrl.items" class="w3-padding-small">{{item.name}}</li>
+  <li ng-repeat="item in $ctrl.items" class="w3-row w3-padding-16">
+    <div class="w3-row">
+      <span class="w3-col w3-large">{{item.name}}</span>
+      <span class="w3-rest w3-small">{{item.description}}</span>
+    </div>
+  </li>
 </ul>
