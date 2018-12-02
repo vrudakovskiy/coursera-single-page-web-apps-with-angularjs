@@ -4,22 +4,25 @@
   <title>Restaurant Menu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles/w3.css">
+  <link rel="stylesheet" href="styles/app.css">
   <script type="text/ecmascript" src="lib/angular-1.7.5/angular.js"></script>
-  <script type="text/ecmascript" src="lib/angular-ui-router.1.0.20/angular-ui-router.js"></script>
+  <script type="text/ecmascript" src="lib/angular-ui-router-0.4.3/angular-ui-router.js"></script>
 
 </head>
-<body ng-app="MenuApp" ng-strict-di class="w3-display-container">
-  <div class="w3-display-topmiddle w3-threequarter">
+<body ng-app="MenuApp" ng-strict-di class="w3-display-container" style="height:100vh">
+  <div class="w3-display-topmiddle w3-threequarter" style="height:100%">
     <div class="w3-bar w3-indigo">
       <a ui-sref="home" class="w3-bar-item w3-button">Home</a>
       <a ui-sref="categories" class="w3-bar-item w3-button">Menu Categories</a>
     </div>
     <ui-view></ui-view>
+    <busy-indicator></busy-indicator>
   </div>
 
   <script type="text/ecmascript" src="src/menuapp/menuapp.module.js"></script>
   <script type="text/ecmascript" src="src/menuapp/categories.controller.js"></script>
   <script type="text/ecmascript" src="src/menuapp/items.controller.js"></script>
+  <script type="text/ecmascript" src="src/menuapp/busy-indicator.component.js"></script>
   <script type="text/ecmascript" src="src/menuapp/menuapp.routes.js"></script>
 
   <script type="text/ecmascript" src="src/data/data.module.js"></script>
