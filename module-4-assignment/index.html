@@ -8,14 +8,18 @@
   <script type="text/ecmascript" src="lib/angular-ui-router.1.0.20/angular-ui-router.js"></script>
 
 </head>
-<body ng-app="MenuApp" ng-strict-di class="w3-rest">
-  <ui-view></ui-view>
+<body ng-app="MenuApp" ng-strict-di class="w3-display-container">
+  <div class="w3-display-topmiddle w3-threequarter">
+    <div class="w3-bar w3-indigo">
+      <a ui-sref="home" class="w3-bar-item w3-button">Home</a>
+      <a ui-sref="categories" class="w3-bar-item w3-button">Menu Categories</a>
+    </div>
+    <ui-view></ui-view>
+  </div>
+
   <script type="text/ecmascript" src="src/menuapp/menuapp.module.js"></script>
-  <script type="text/ecmascript" src="src/menuapp/nav-bar.component.js"></script>
-  <script type="text/ecmascript" src="src/menuapp/categories.component.js"></script>
-  <script type="text/ecmascript" src="src/menuapp/items.component.js"></script>
-  <script type="text/ecmascript" src="src/menuapp/categories-view.controller.js"></script>
-  <script type="text/ecmascript" src="src/menuapp/items-view.controller.js"></script>
+  <script type="text/ecmascript" src="src/menuapp/categories.controller.js"></script>
+  <script type="text/ecmascript" src="src/menuapp/items.controller.js"></script>
   <script type="text/ecmascript" src="src/menuapp/menuapp.routes.js"></script>
 
   <script type="text/ecmascript" src="src/data/data.module.js"></script>

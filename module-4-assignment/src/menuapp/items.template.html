@@ -1,3 +1,4 @@
-<ul>
-  <li ng-repeat="item in $ctrl.items">{{item.name}}</li>
+<h1>{{ctrl.category.name}} Category Menu Items</h1>
+<ul class="w3-ul">
+  <li ng-repeat="item in ctrl.items" class="w3-padding-small">{{item.name}}</li>
 </ul>

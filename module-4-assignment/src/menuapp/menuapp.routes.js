@@ -12,17 +12,27 @@
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'src/menuapp/home-view.template.html'
+        templateUrl: 'src/menuapp/home.template.html'
       })
       .state('categories', {
         url: '/categories',
-        templateUrl: 'src/menuapp/categories-view.template.html',
-        controller: 'CategoriesViewController as ctrl'
+        templateUrl: 'src/menuapp/categories.template.html',
+        controller: 'CategoriesController as ctrl',
+        resolve: {
+          categories: ['MenuDataService', function(MenuDataService) {
+            return MenuDataService.getAllCategories();
+          }]
+        }
       })
       .state('items', {
         url: '/items/{categoryId}',
-        templateUrl: 'src/menuapp/items-view.template.html',
-        controller: 'ItemsViewController as ctrl'
+        templateUrl: 'src/menuapp/items.template.html',
+        controller: 'ItemsController as ctrl',
+        resolve: {
+          categoryData: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService) {
+            return MenuDataService.getItemsForCategory($stateParams.categoryId);
+          }]
+        }
       });
   }
 
