@@ -3,7 +3,7 @@
   angular
     .module('MenuApp')
     .component('busyIndicator', {
-      templateUrl: 'src/menuapp/busy-indicator.template.html',
+      templateUrl: '/src/menuapp/busy-indicator.component.html',
       controller: BusyIndicatorController
     });
 

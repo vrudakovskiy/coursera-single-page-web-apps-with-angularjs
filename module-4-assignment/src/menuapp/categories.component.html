@@ -1,0 +1,5 @@
+<ul class="w3-ul w3-hoverable">
+  <li ng-repeat="item in $ctrl.items" class="w3-padding-small w3-bar w3-hover-light-blue" ui-sref="items({categoryId: item.short_name})">
+    <span class="w3-bar-item">{{item.name}}</span>
+  </li>
+</ul>
