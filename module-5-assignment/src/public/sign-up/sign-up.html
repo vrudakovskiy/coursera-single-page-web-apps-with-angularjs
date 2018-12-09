@@ -1,0 +1,63 @@
+<div class="container">
+  <h2 class="text-center">Sign-Up</h2>
+
+  <fieldset ng-if="!signUpCtrl.saved">
+    <legend style="color: white;">Registration</legend>
+
+    <form name='signUpForm' novalidate>
+      <table>
+        <tboby>
+          <tr>
+            <td>
+              <label for="firstName">First Name:</label>
+            </td>
+            <td>
+              <input type="text" name="firstName" placeholder="First Name" ng-model="signUpCtrl.user.firstName" required /><br />
+              <span ng-if="signUpForm.firstName.$error.required && signUpForm.firstName.$touched" class="input-error">First name must be provided.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="lastName">Last Name:</label>
+            </td>
+            <td>
+              <input type="text" name="lastName" placeholder="Last Name" ng-model="signUpCtrl.user.lastName" required /><br />
+              <span ng-if="signUpForm.lastName.$error.required && signUpForm.lastName.$touched" class="input-error">Last name must be provided.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="email">E-mail:</label>
+            </td>
+            <td>
+              <input type="email" name="email" placeholder="E-mail" ng-model="signUpCtrl.user.email" required /><br />
+              <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched" class="input-error">Must be a valid email address: handle@domain format.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="phone">Phone Number:</label>
+            </td>
+            <td>
+              <input type="text" name="phone" placeholder="Phone ###-###-####" ng-model="signUpCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})" /><br />
+              <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched" class="input-error">Phone must be in the format ###-###-####.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="favouriteDish">Favourite dish menu number (eg. A1, C5, etc.):</label>
+            </td>
+            <td>
+              <input type="text" name="favouriteDish" placeholder="Favourite Dish" ng-model="signUpCtrl.user.favouriteDish" ng-model-options="{ updateOn: 'default blur' }" valid-menu-item /><br />
+              <span ng-if="signUpForm.favouriteDish.$invalid && signUpForm.favouriteDish.$touched" class="input-error">No such menu number exists.</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.submit()">Submit</button>
+    </form>
+  </fieldset>
+
+  <div class="text-center" ng-if="signUpCtrl.saved">Your information has been saved.</div>
+</div>
